@@ -1378,3 +1378,74 @@ main {
     transform: none !important;
   }
 }
+
+/* ===================== KÍNH TRONG SUỐT ===================== */
+/* thẻ nhìn xuyên thấy nền phía sau, chỉ giữ chữ và dấu hiệu thương hiệu */
+.card__in {
+  background: linear-gradient(150deg, rgba(255, 255, 255, .30), rgba(255, 255, 255, .11));
+  border-color: rgba(255, 255, 255, .58);
+  -webkit-backdrop-filter: blur(20px) saturate(165%);
+  backdrop-filter: blur(20px) saturate(165%);
+  box-shadow:
+    0 14px 30px -18px rgba(44, 55, 24, .38),
+    inset 0 1px 0 rgba(255, 255, 255, .72);
+}
+
+.card:hover .card__in,
+.card:focus-visible .card__in {
+  background: linear-gradient(150deg, rgba(255, 255, 255, .44), rgba(255, 255, 255, .19));
+  border-color: rgba(255, 255, 255, .82);
+  box-shadow:
+    0 22px 44px -20px rgba(44, 55, 24, .44),
+    0 0 0 1px color-mix(in srgb, var(--brand) 32%, transparent),
+    0 16px 34px -16px color-mix(in srgb, var(--brand) 34%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, .88);
+}
+
+/* ô icon: bỏ hẳn nền, chỉ còn viền mảnh + hình thương hiệu */
+.card__icon {
+  background: rgba(255, 255, 255, .12);
+  color: color-mix(in srgb, var(--brand) 88%, var(--olive-deep));
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .42);
+}
+
+.card:hover .card__icon,
+.card:focus-visible .card__icon {
+  background: rgba(255, 255, 255, .26);
+  color: var(--brand);
+  transform: scale(1.07) rotate(-6deg);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .62);
+}
+
+/* mũi tên: hoàn toàn trong suốt, chỉ đổi màu và trượt sang */
+.card__arrow {
+  background: none;
+  box-shadow: none;
+}
+
+.card:hover .card__arrow,
+.card:focus-visible .card__arrow {
+  background: none;
+  box-shadow: none;
+  color: color-mix(in srgb, var(--brand) 72%, var(--olive-deep));
+}
+
+/* chữ đậm hơn một chút cho dễ đọc trên nền kính */
+.card__sub {
+  color: #4c5a2b;
+}
+
+/* các lớp sáng dịu lại để không thành vệt trắng đục trên kính */
+.card__glow {
+  background: radial-gradient(170px circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 255, 255, .42), transparent 64%);
+}
+
+.card__shine {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .5), transparent);
+}
+
+.card__in::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+}
