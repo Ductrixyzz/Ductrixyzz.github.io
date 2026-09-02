@@ -9,10 +9,6 @@
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const rand = (min, max) => min + Math.random() * (max - min);
 
-  /* ---------- năm hiện tại ---------- */
-  const yearEl = $('#year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
   /* ---------- logo: nếu chưa có assets/logo.png thì dùng bản vẽ SVG ---------- */
   const img = $('#logoImg');
   const svgLogo = $('#logoSvg');
