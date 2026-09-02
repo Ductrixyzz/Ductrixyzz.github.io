@@ -1061,8 +1061,8 @@ main {
 
 .name .ch {
   background-image: linear-gradient(100deg,
-      #3a4520 0%, #4f5d2a 26%, #8aa060 42%, #f2f8e0 50%,
-      #8aa060 58%, #4f5d2a 74%, #3a4520 100%);
+      #2f3a1c 0%, #45521f 26%, #6d8145 42%, #9cb776 50%,
+      #6d8145 58%, #45521f 74%, #2f3a1c 100%);
   background-size: 320% 100%;
   background-position: 100% 0;
   -webkit-background-clip: text;
@@ -1214,8 +1214,12 @@ main {
 }
 
 .card__edge {
+  left: 4px;
+  top: 24%;
+  bottom: 24%;
   width: 4px;
-  opacity: .72;
+  border-radius: 4px;
+  opacity: .75;
 }
 
 /* mũi tên thành nút tròn khi trỏ vào */
