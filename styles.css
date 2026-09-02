@@ -596,7 +596,7 @@ main {
 .links {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 17px;
   margin-top: 34px;
 }
 
@@ -1192,15 +1192,25 @@ main {
     inset 0 1px 0 #fff;
 }
 
-/* ô icon đậm màu thương hiệu ngay từ đầu */
+/* ô icon dạng kính mờ, chỉ nhuộm nhẹ màu thương hiệu */
 .card__icon {
-  background: linear-gradient(145deg,
-      color-mix(in srgb, var(--brand) 24%, #fff),
-      color-mix(in srgb, var(--brand) 9%, #fff));
-  color: color-mix(in srgb, var(--brand) 72%, var(--olive-deep));
+  background: color-mix(in srgb, var(--brand) 15%, rgba(255, 255, 255, .4));
+  color: color-mix(in srgb, var(--brand) 80%, var(--olive-deep));
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   box-shadow:
-    inset 0 1px 0 #fff,
-    0 6px 14px -6px color-mix(in srgb, var(--brand) 55%, transparent);
+    inset 0 0 0 1px rgba(255, 255, 255, .62),
+    0 5px 12px -7px color-mix(in srgb, var(--brand) 45%, transparent);
+}
+
+.card:hover .card__icon,
+.card:focus-visible .card__icon {
+  background: color-mix(in srgb, var(--brand) 26%, rgba(255, 255, 255, .46));
+  color: color-mix(in srgb, var(--brand) 92%, var(--olive-deep));
+  transform: scale(1.07) rotate(-6deg);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .8),
+    0 8px 18px -8px color-mix(in srgb, var(--brand) 50%, transparent);
 }
 
 .card__title {
@@ -1219,20 +1229,29 @@ main {
   bottom: 24%;
   width: 4px;
   border-radius: 4px;
-  opacity: .75;
+  opacity: .62;
+  /* pha thêm màu ô liu để TikTok/X không thành vạch đen gắt */
+  background: color-mix(in srgb, var(--brand) 68%, var(--olive));
 }
 
-/* mũi tên thành nút tròn khi trỏ vào */
+.card:hover .card__edge,
+.card:focus-visible .card__edge {
+  opacity: .9;
+  box-shadow: 0 0 14px 1px color-mix(in srgb, var(--brand) 45%, transparent);
+}
+
+/* mũi tên: nền kính mờ, không còn cục màu đặc */
 .card__arrow {
   padding: 3px;
   border-radius: 50%;
   transition: transform .5s var(--ease), color .4s, background .4s, box-shadow .4s;
 }
 
-.card:hover .card__arrow {
-  color: #fff;
-  background: var(--brand, var(--olive));
-  box-shadow: 0 6px 14px -6px color-mix(in srgb, var(--brand) 75%, transparent);
+.card:hover .card__arrow,
+.card:focus-visible .card__arrow {
+  color: color-mix(in srgb, var(--brand) 78%, var(--olive-deep));
+  background: color-mix(in srgb, var(--brand) 13%, rgba(255, 255, 255, .34));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .55);
 }
 
 /* vệt sáng tự chạy qua thẻ để không bị chìm */
@@ -1306,18 +1325,19 @@ main {
   }
 
   .card__in {
-    padding: 12px 13px;
-    gap: 11px;
+    padding: 15px 14px;
+    gap: 13px;
   }
 
   .card__icon {
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
   }
 
   .links {
-    gap: 11px;
+    gap: 16px;
+    margin-top: 30px;
   }
 }
 
